@@ -1,0 +1,14 @@
+<h1>Edit task</h1>
+<%= form_with model: @task do |t| %>
+  <%= t.label :title %>
+  <%= t.text_field :title %>
+  <%= t.label :details %>
+  <%= t.text_field :details %>
+  <%= t.submit %>
+<% end %>
+
+<p><%= link_to "Delete Task",
+  task_path(@task),
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%></p>
+<p><%= link_to "Return to task", task_path(@task) %></p>
